@@ -5,9 +5,10 @@ name: 票房提醒
 
 on:
   schedule:
-    # 设置启动时间，为 UTC 时间, UTC23点 对应北京时间早7点
-    - cron : '00 23 * * *'
+    # 每2分钟运行一次
+    - cron : '*/2 * * * *'
   workflow_dispatch:
+
 
 permissions:
   contents: read
