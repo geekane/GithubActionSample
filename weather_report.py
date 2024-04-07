@@ -4,12 +4,9 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-# 从测试号信息获取
 appID = os.environ.get("APP_ID")
 appSecret = os.environ.get("APP_SECRET")
-# 收信人ID即 用户列表中的微信号
 openId = os.environ.get("OPEN_ID")
-# 天气预报模板ID
 weather_template_id = os.environ.get("TEMPLATE_ID")
 
 def get_weather(my_city):
@@ -57,7 +54,6 @@ def get_weather(my_city):
                     wind = f"{wind_day}" if wind_day != "--" else f"{wind_night}"
                     return this_city, temp, weather_typ, wind
 
-
 def get_access_token():
     # 获取access token的url
     url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={}&secret={}' \
@@ -67,7 +63,6 @@ def get_access_token():
     access_token = response.get('access_token')
     return access_token
 
-
 def get_daily_love():
     # 每日一句情话
     url = "https://api.lovelive.tools/api/SweetNothings/Serialization/Json"
@@ -76,7 +71,6 @@ def get_daily_love():
     sentence = all_dict['returnObj'][0]
     daily_love = sentence
     return daily_love
-
 
 def send_weather(access_token, weather):
     # touser 就是 openID
@@ -116,8 +110,6 @@ def send_weather(access_token, weather):
     url = 'https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}'.format(access_token)
     print(requests.post(url, json.dumps(body)).text)
 
-
-
 def weather_report(this_city):
     # 1.获取access_token
     access_token = get_access_token()
@@ -127,7 +119,5 @@ def weather_report(this_city):
     # 3. 发送消息
     send_weather(access_token, weather)
 
-
-
 if __name__ == '__main__':
-    weather_report("淄博")
+    weather_report("成都")
