@@ -1,14 +1,10 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: 票房提醒
 
 on:
   schedule:
-    # 每2分钟运行一次
+    # 每5分钟运行一次
     - cron : '*/5 * * * *'
   workflow_dispatch:
-
 
 permissions:
   contents: read
