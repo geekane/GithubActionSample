@@ -6,7 +6,7 @@ name: 票房提醒
 on:
   schedule:
     # 每2分钟运行一次
-    - cron : '*/2 * * * *'
+    - cron : '*/5 * * * *'
   workflow_dispatch:
 
 
