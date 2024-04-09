@@ -5,8 +5,7 @@ name: 天气预报
 
 on:
   schedule:
-    # 每5分钟运行一次
-    - cron : '*/5 * * * *'
+    - cron: '40 0 * * *'
   workflow_dispatch:
 
 permissions:
