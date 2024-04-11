@@ -1,23 +1,3 @@
-# Github Action功能样例
-
-原理：使用Github Action功能，运行python程序，实现无服务器的免费任务，比如天气推送，薅羊毛，签到
-
-## Part1 构建画爱心为可执行程序
-Fork本项目
-
-构架Windows 可执行程序:
-Actions-->画爱心Windows版-->run work flow-->结束后查看结果
--->Artifacts-->下载love_heart
-
-构架Ubuntu 可执行程序:
-Actions-->画爱心Ubuntu版-->run work flow-->结束后查看结果
--->Artifacts-->下载love_heart
-
-构架MacOS 可执行程序:
-Actions-->画爱心MacOS版-->run work flow-->结束后查看结果
--->Artifacts-->下载love_heart
-
-
 ## Part2 天气推送
 
 ### 申请公众号测试账户
